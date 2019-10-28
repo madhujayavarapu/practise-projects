@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* Bootstrap CSS v4.3.1 */
+@import "~bootstrap/scss/bootstrap.scss";
+
+/* Font Awesome css */
+@import "./assets/fontawesome-free/scss/fontawesome.scss";
+@import './assets/fontawesome-free/scss/brands.scss';
+@import './assets/fontawesome-free/scss/regular.scss';
+@import './assets/fontawesome-free/scss/solid.scss';
+
+/* Start Bootstrap admin 2 css */
+@import "./assets/scss/sb-admin-2.scss";
+
+/* NoUiSlider css */
+// @import "~nouislider/distribute/nouislider.min.css";
