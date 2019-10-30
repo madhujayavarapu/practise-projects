@@ -11,7 +11,43 @@
 @import "./assets/scss/sb-admin-2.scss";
 
 /* NoUiSlider css */
-// @import "~nouislider/distribute/nouislider.min.css";
+@import "~nouislider/distribute/nouislider.min.css";
+
+.bg-gradient-purple {
+    background: $purple - 50;
+}
+.bg-dark-theme {
+    background: #393e46;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.text-purple {
+    color: $purple;
+}
+.btn-purple {
+    background: $purple;
+    color: $white;
+    &:hover {
+        color: $purple - 40;
+    }
+    &:active,
+    &.active {
+        color: $purple - 50;
+    }
+}
+
+.doc-container {
+    p {
+        text-indent: 2rem;
+        margin: 10px;
+    }
+    ul > .list-group-item {
+        border: none;
+        margin: 0;
+        padding: 5px 15px; 
+    }
+}
 
 $sidemenuWidth:240px;
 

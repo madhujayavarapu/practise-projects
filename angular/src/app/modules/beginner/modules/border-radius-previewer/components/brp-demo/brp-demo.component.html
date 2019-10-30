@@ -1,0 +1,58 @@
+<ng-page-info title="Border Radius Preview Demo" demoLink="BORDER_RADIUS_PREVIEWER_DEMO_LINK"
+  docLink="BORDER_RADIUS_PREVIEWER_DOCS_LINK"></ng-page-info>
+  
+<div class="row">
+  <div class="col-12 col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5>Preview:</h5>
+        <div class="brp-preview" [ngStyle]="result"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <div class="form-row">
+          <div class="form-group col">
+            <label for="width">Width</label>
+            <input type="number" class="form-control" [(ngModel)]="width" (change)="valueChanged('width', width)">
+          </div>
+          <div class="form-group col">
+            <label for="width">Height</label>
+            <input type="number" class="form-control" [(ngModel)]="height" (change)="valueChanged('height', height)">
+          </div>
+        </div>
+        <p>Top Left: </p>
+        <nouislider [connect]="true" [min]="0" [max]="100" [tooltips]="[true]" [step]="1" [(ngModel)]="topLeft" (change)="valueChanged('border-radius', topLeft)"></nouislider>
+
+        <p>Top Right: </p>
+        <nouislider [connect]="true" [min]="0" [max]="100" [tooltips]="[true]" [step]="1" [(ngModel)]="topRight" (change)="valueChanged('border-radius', topRight)"></nouislider>
+
+        <p>Bottom Left: </p>
+        <nouislider [connect]="true" [min]="0" [max]="100" [tooltips]="[true]" [step]="1" [(ngModel)]="bottomLeft" (change)="valueChanged('border-radius', bottomLeft)"></nouislider>
+
+        <p>Bottom Right: </p>
+        <nouislider [connect]="true" [min]="0" [max]="100" [tooltips]="[true]" [step]="1" [(ngModel)]="bottomRight" (change)="valueChanged('border-radius', bottomRight)"></nouislider>
+        
+      </div>
+    </div>
+    <div class="card shadow-sm mb-2">
+      <div class="card-body">
+        <div class="d-flex justify-content-between m-0">
+          <h5>CSS</h5>
+          <!-- 
+            getting some error in importing. need to fix.
+            [ngClipboard]="copyDiv.innerHTML.trim()"
+            (clipboardCopy)="logSuccess( $event )"
+            (clipboardError)="logError( $event )"
+           -->
+          <button class="btn" title="Copy to Clipboard.. Not yet implemented"
+          
+            ><i class="fa fa-copy"></i></button>
+        </div>
+        <pre #copyDiv [innerHTML]="result | json"></pre>
+      </div>
+    </div>
+  </div>
+</div>

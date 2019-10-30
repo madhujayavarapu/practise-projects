@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  isSidebarToggled: Boolean = false;
+  isSidebarToggled: Boolean = true;
   loadingSidebar: boolean = false;
 
   toggleSidebar(val) {
