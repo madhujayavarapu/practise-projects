@@ -5,7 +5,7 @@ import { PROJ_CONSTANTS } from 'src/app/constants';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-sidebar-menu',
+  selector: 'ng-sidebar-menu',
   templateUrl: './sidebar-menu.component.html',
   styleUrls: ['./sidebar-menu.component.scss']
 })

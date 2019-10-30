@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
+  selector: 'ng-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })

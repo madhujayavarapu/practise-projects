@@ -1,0 +1,11 @@
+@import '../../../../../assets/scss/variables';
+
+.btn-group {
+    .btn {
+        background-color: $purple - 20;
+        color: #fff;
+        &.active {
+            background-color: $purple - 50;
+        }
+    }
+}
