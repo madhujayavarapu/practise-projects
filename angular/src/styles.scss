@@ -12,3 +12,38 @@
 
 /* NoUiSlider css */
 // @import "~nouislider/distribute/nouislider.min.css";
+
+$sidemenuWidth:240px;
+
+.sidebar {
+    @media (min-width: 768px){
+        width:$sidemenuWidth !important;
+    }
+    .nav-item {
+        .nav-link {
+            width:unset;
+            &.active {
+                background: #2f0082;
+                border-left: 5px solid #2a3571;
+                color: #fff;
+              }
+        }
+    }
+}
+
+.menu-container{
+    height: 100vh;
+    position: sticky;
+    top:0;
+    left: 0;
+    display: flex;
+    .sidebar-menu{
+        margin-left: 0;
+        transition: all .5s ease;
+    }
+    &.closed{
+        .sidebar-menu{
+            margin-left: -$sidemenuWidth;
+        }
+    }
+}

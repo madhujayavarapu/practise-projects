@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular';
+
+  isSidebarToggled: Boolean = false;
+  loadingSidebar: boolean = false;
+
+  toggleSidebar(val) {
+    this.loadingSidebar = true;
+    this.isSidebarToggled = !this.isSidebarToggled;
+
+    setTimeout(() => {
+      this.loadingSidebar = false;
+    }, 500)
+  }
 }

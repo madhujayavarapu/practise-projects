@@ -1,0 +1,139 @@
+@import "../../../../../assets/scss/variables";
+
+.main-sidebar {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  width: 100px;
+  background: $blue - 30;
+  box-shadow: 1px 0 3px rgba(0, 0, 0, .2);
+  position: relative;
+  z-index: 2;
+  
+
+  .sidebar-brand{
+      color: #fff;
+      text-align: center;
+      .sidebar-brand-icon {
+          font-size: 2rem;
+      }
+  }
+
+  .nav {
+    li {
+        display: block;
+        width: 100%;
+        a{
+          text-align: center;
+          color: $white - 70;
+          font-size: 12px;
+          padding-left: 2px;
+          padding-right: 2px;
+          display: block;
+          span{
+              display: block;
+          }
+
+          &:hover {
+              color: $white;
+          }
+          &:active {
+            color: $white;
+          }
+          &.active {
+              color: $white;
+              background: $blue - 50;
+              border-left: 5px solid $blue - 60;
+          }
+        }
+    }
+  }
+
+  .sidebar-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    &::after {
+      font-weight: 900;
+      content: '\f104';
+      font-family: 'Font Awesome 5 Free';
+      margin-right: 0.1rem;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    &.toggled::after {
+      content: '\f105';
+      font-family: 'Font Awesome 5 Free';
+      margin-left: 0.25rem;
+    }
+  }
+  .sidebar-divider {
+    margin: 0 1rem 1rem;
+    // border-top: 1px solid rgba(255,255,255,.15);
+    border-top: 1px solid $white - 40;
+  }
+}
+
+.main-sidebar-purple {
+  background: $purple - 40;
+  .nav {
+    li {
+      a {
+        &.active {
+          color: $white;
+          background: $purple - 60;
+          border-left: 5px solid $purple - 80;
+        }
+      }
+    }
+  }
+}
+.main-sidebar-danger {
+  background: $red - 40;
+}
+.main-sidebar-teal {
+  background: $teal - 40;
+}
+.main-sidebar-dark {
+  background: $black - 40;
+  .nav {
+    li {
+      a {
+        &.active {
+          color: $black;
+          background: $black + 100;
+        }
+      }
+    }
+  }
+}
+.main-sidebar-light {
+  background: $white + 40;
+  .sidebar-brand {
+    color: $black;
+  }
+  .nav {
+    li{
+      a{
+        color: $black + 40;
+        &:hover {
+          color: $black;
+        }
+        &.active {
+          color: $black;
+          background: $black + 100;
+        }
+      }
+    }
+  }
+}

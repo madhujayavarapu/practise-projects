@@ -1,0 +1,24 @@
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-purple sidebar sidebar-dark" [class.submenu-open]="isToggled || options.length != 0">
+
+  <li class="nav-item" *ngFor="let opt of options; let i=index;">
+    <a *ngIf="!opt.childs || opt.childs.length <= 0" [routerLink]="opt.link" class="nav-link" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">
+      <i *ngIf="!!opt.icon" [class]="'fas '+opt.icon"></i>
+      <span>{{ opt.name }}</span>
+    </a>
+    <a class="nav-link dropdown-arrow" *ngIf="!!opt.childs && opt.childs.length > 0" [class.collapsed]="!opt.showChilds" (click)="opt.showChilds = !opt.showChilds">
+      <i [class]="'fas '+opt.icon"></i>
+      <span>{{ opt.name }}</span>
+    </a>
+    <div class="collapse" [class.show]="opt.showChilds">
+      <div class="pl-3 collapse-inner">
+        <a class="collapse-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}" [routerLink]="sub.link"
+           *ngFor="let sub of opt.childs">
+           {{sub.name}}
+        </a>
+      </div>
+    </div>
+  </li>
+
+</ul>
+<!-- End of Sidebar -->

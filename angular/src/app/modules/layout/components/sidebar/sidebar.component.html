@@ -1,0 +1,38 @@
+<div class="main-sidebar main-sidebar-purple" *ngIf="hide">
+  <a class="sidebar-brand" [routerLink]="['']">
+    <div class="sidebar-brand-icon rotate-n-15">
+      <i class="fas fa-laugh-wink"></i>
+    </div>
+  </a>
+  <hr class="sidebar-divider my-2">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['', 'home']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['', 'beginner']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">
+        <i class="fas fa-tachometer-alt"></i>
+        <span>Beginner</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['', 'intermediate']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">
+        <i class="fas fa-grip-horizontal"></i>
+        <span>Intermediate</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['', 'advanced']" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: false}">
+        <i class="fas fa-search"></i>
+        <span>Advanced</span>
+      </a>
+    </li>
+    
+  </ul>
+  <div class="text-center d-none d-md-inline mt-3">
+    <button class="rounded-circle border-0 sidebar-toggle" [class.toggled]="isToggled" id="sidebarToggle" (click)="toggleSidebarEvent()"></button>
+  </div>
+</div>
