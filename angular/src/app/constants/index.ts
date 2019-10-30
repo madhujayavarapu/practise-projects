@@ -5,9 +5,9 @@ export const routes = {
   BORDER_RADIUS_PREVIEWER_DEFAULT_LINK: ['', 'beginner', 'border-radius-previewer'],
   BORDER_RADIUS_PREVIEWER_DEMO_LINK: ['', 'beginner', 'border-radius-previewer', 'demo'],
   BORDER_RADIUS_PREVIEWER_DOCS_LINK: ['', 'beginner', 'border-radius-previewer', 'docs'],
-  // CAUSE_EFFECT_DEFAULT_LINK: ['', 'beginner', 'cause-effect'],
-  // CAUSE_EFFECT_DEMO_LINK: ['', 'beginner', 'cause-effect', 'demo'],
-  // CAUSE_EFFECT_DOCS_LINK: ['', 'beginner', 'cause-effect', 'docs'],
+  CAUSE_EFFECT_DEFAULT_LINK: ['', 'beginner', 'cause-effect'],
+  CAUSE_EFFECT_DEMO_LINK: ['', 'beginner', 'cause-effect', 'demo'],
+  CAUSE_EFFECT_DOCS_LINK: ['', 'beginner', 'cause-effect', 'docs'],
 
   // COLOR_CYCLE_DEFAULT_LINK: ['', 'beginner', 'color-cycle'],
   // COLOR_CYCLE_DEMO_LINK: ['', 'beginner', 'color-cycle', 'demo'],
@@ -22,15 +22,15 @@ export const navOptions = {
   "beginner": [{
       "name": "Border Radius Previewer",
       "link": routes.BORDER_RADIUS_PREVIEWER_DEFAULT_LINK
-    }
+    },
     // {
     //   'name': "Calculator",
     //   "link": routes.CALCULATOR_DEFAULT_LINK
     // },
-    // {
-    //   'name': "Cause Effect",
-    //   "link": routes.CAUSE_EFFECT_DEFAULT_LINK
-    // },
+    {
+      'name': "Cause Effect",
+      "link": routes.CAUSE_EFFECT_DEFAULT_LINK
+    },
     // {
     //   'name': 'Color Cycle',
     //   'link': routes.COLOR_CYCLE_DEFAULT_LINK

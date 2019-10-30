@@ -1,0 +1,49 @@
+<ng-page-info title="Cause Effect Demo" demoLink="CAUSE_EFFECT_DEMO_LINK" docLink="CAUSE_EFFECT_DOCS_LINK"></ng-page-info>
+
+<div class="row">
+  <div class="col-12 mb-sm-3" [class.col-md-6]="!!personDetails">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5>Persons List:</h5>
+        <ul class="list-group">
+          <li class="list-group-item" [ngClass]="{'list-group-item-success border-left-success': personDetails?.name == person.name}" 
+            *ngFor="let person of persons; let i = index;" (click)="showPersonDetails(person)">
+            {{person.name}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-md-6" *ngIf="!!personDetails">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h5>Person Details:</h5>
+        
+        <table class="table">
+          <tbody>
+            <tr>
+              <th>Name</th>
+              <td>{{personDetails?.name}}</td>
+            </tr>
+            <tr>
+              <th>Sur Name</th>
+              <td>{{personDetails?.surname}}</td>
+            </tr>
+            <tr>
+              <th>Date of Birth</th>
+              <td>{{personDetails?.birthday}}</td>
+            </tr>
+            <tr>
+              <th>Phone Number</th>
+              <td>{{personDetails?.phoneNumber}}</td>
+            </tr>
+            <tr>
+              <th>Address</th>
+              <td>{{personDetails?.address}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

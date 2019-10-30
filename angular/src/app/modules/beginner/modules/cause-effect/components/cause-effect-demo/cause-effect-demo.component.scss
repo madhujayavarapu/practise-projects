@@ -1,0 +1,11 @@
+.list-group {
+    height: 500px;
+    overflow-y: auto;
+    .list-group-item {
+        &:hover {
+            background: #b8daff;
+            color: #004085;
+            cursor: pointer;
+        }
+    }
+}
