@@ -1,0 +1,29 @@
+<ng-page-info title="Calculator Demo" [demoLink]="'CALCULATOR_DEMO_LINK'" [docLink]="'CALCULATOR_DOCS_LINK'">
+</ng-page-info>
+<div class="d-md-flex d-sm-block justify-content-around align-content-center">
+  <div class="flex-fill">
+    <div class="card pl-5 shadow-sm">
+      <div class="card-body">
+        <ng-container [ngSwitch]="activeCalculator">
+          <ng-calculator *ngSwitchCase="'basic'"></ng-calculator>
+          <ng-time-calculator *ngSwitchCase="'time'"></ng-time-calculator>
+          <ng-container *ngSwitchDefault="">
+            <h4>Not yet implemented.</h4>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="card card-primary shadow-sm m-2 cursor-pointer" [ngClass]="{'bg-primary text-light': activeCalculator == 'basic'}" (click)="openCalc('basic')">
+      <div class="card-body">
+        Basic Calculator
+      </div>
+    </div>
+    <div class="card shadow-sm m-2 cursor-pointer" [ngClass]="{'bg-primary text-light': activeCalculator == 'time'}" (click)="activeCalculator = 'time'">
+      <div class="card-body">
+        Time Calculator
+      </div>
+    </div>
+  </div>
+</div>

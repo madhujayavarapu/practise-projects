@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'cause-effect',
     loadChildren: () => import('./modules/cause-effect/cause-effect.module').then(m => m.CauseEffectModule)
   },
+  {
+    path: 'calculator',
+    loadChildren: () => import('./modules/calculator/calculator.module').then(m => m.CalculatorModule)
+  },
 ];
 
 @NgModule({

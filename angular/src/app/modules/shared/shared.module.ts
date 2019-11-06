@@ -2,17 +2,20 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageInfoComponent } from './components/page-info/page-info.component';
+import { ReqListComponent } from './components/req-list/req-list.component';
 
 @NgModule({
   declarations: [
-    PageInfoComponent
+    PageInfoComponent,
+    ReqListComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([])
   ],
   exports: [
-    PageInfoComponent
+    PageInfoComponent,
+    ReqListComponent
   ]
 })
 export class SharedModule { }

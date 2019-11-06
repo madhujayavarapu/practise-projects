@@ -1,0 +1,6 @@
+<div class="dropdown-container">
+  <label [class.sr-only]="!label">{{label}}</label>
+  <select [(ngModel)]="model" [ngClass]="class">
+    <option value="{{!!bindKey ? opt[bindKey] : opt}}" *ngFor="let opt of options;">{{ !!displayName ? opt[displayName] : opt}}</option>
+  </select>
+</div>

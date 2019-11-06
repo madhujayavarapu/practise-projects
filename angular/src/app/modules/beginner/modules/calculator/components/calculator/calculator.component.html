@@ -1,0 +1,97 @@
+<table class="table calculator">
+  <tr>
+    <td colspan="4">
+      <!-- <textarea rows="3" class="form-control" [value]="history"></textarea>           -->
+      <span *ngIf="history.length > 0" class="history-container">
+        <span *ngFor="let prev of history">
+          <span>{{prev.query}}</span><br/>
+          <span>= {{prev.result | number: 2-2}}</span>
+          <hr/>
+        </span>
+      </span>
+
+      <span *ngIf="query.length<1">0</span>
+      <span *ngIf="query.length>=1">
+        <span *ngFor="let ele of query">
+          <span *ngIf="operators.indexOf(ele) == -1">{{ele}}</span>
+          <span *ngIf="operators.indexOf(ele) != -1">
+            <span *ngIf="ele == 'plus'">+</span>
+            <span *ngIf="ele == 'minus'">&minus;</span>
+            <span *ngIf="ele == 'divide'">&divide;</span>
+            <span *ngIf="ele == 'mod'">%</span>
+            <span *ngIf="ele == 'mul'">&times;</span>
+          </span>
+        </span>
+      </span><br/>
+      <ng-container *ngIf="isQueryResult" class="text-success">
+        <ng-container *ngIf="queryResult == 'Infinity'">Invalid Expression</ng-container>
+        <ng-container *ngIf="queryResult !== 'Infinity'">= {{queryResult | number: 2-2}}</ng-container>
+      </ng-container>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="btn btn-danger btn-block calc-button" (click)="removeQuery()">{{ query.length > 0 ? 'C' : 'AC'}}</button>
+    </td>
+    <td>
+      <button class="btn btn-warning btn-block calc-button" (click)="removeLastOne()">C</button>
+    </td>
+    <td>
+      <button class="btn btn-info btn-block calc-button" (click)="addToQuey('divide')">/</button>
+    </td>
+    <td>
+      <button class="btn btn-info btn-block calc-button" (click)="addToQuey('mul')">X</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(7)">7</button>
+    </td>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(8)">8</button>
+    </td>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(9)">9</button>
+    </td>
+    <td>
+      <button class="btn btn-info btn-block calc-button" (click)="addToQuey('mod')">%</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(4)">4</button>
+    </td>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(5)">5</button>
+    </td>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(6)">6</button>
+    </td>
+    <td>
+      <button class="btn btn-info btn-block calc-button" (click)="addToQuey('minus')">-</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(1)">1</button>
+    </td>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(2)">2</button>
+    </td>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(3)">3</button>
+    </td>
+    <td>
+      <button class="btn btn-info btn-block calc-button" (click)="addToQuey('plus')">+</button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <button class="btn btn-secondary btn-block calc-button" (click)="addToQuey(0)">0</button>
+    </td>
+    <td>
+      <button class="btn btn-secondary btn-block calc-button">.</button>
+    </td>
+    <td><button class="btn btn-success btn-block calc-button" (click)="validateQuery()">=</button></td>
+  </tr>
+</table>

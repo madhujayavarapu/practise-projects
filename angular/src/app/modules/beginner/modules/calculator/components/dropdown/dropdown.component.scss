@@ -1,0 +1,25 @@
+.dropdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    label {
+        font-size: 12px;
+        margin: 0;
+        margin-right: 10px;
+    }
+
+    select {
+        background: inherit;
+        border: none;
+        
+        &:hover, &:focus {
+            border:none;
+            background: inherit;
+        }
+
+        option {
+            border: 1px solid red;
+        }
+    }
+}

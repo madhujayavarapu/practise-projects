@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="col-auto">
+    <ng-dropdown 
+      [options]="timeOptions" 
+      [(model)]="from"
+      class="calc-control"
+      (modelChange)="calc('from')">
+    </ng-dropdown>
+  </div>
+
+  <div class="col">
+    <label for="from">{{ timeOptions[from] }}</label>
+    <input type="number" name="from" id="from" [(ngModel)]="fromVal" class="form-control" (change)="calc('from')">
+  </div>
+</div>
+
+<div class="d-flex justify-content-center align-items-center">
+  <div class="col-auto">
+    <ng-dropdown 
+      [options]="timeOptions" 
+      [(model)]="to"
+      class="calc-control"
+      (modelChange)="calc('from')">
+    </ng-dropdown>
+  </div>
+
+  <div class="col">
+    <label for="to">{{ timeOptions[to] }}</label>
+    <input type="number" name="to" id="to" class="form-control" [(ngModel)]="toVal" (change)="calc('to')">
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.calculator {
+  max-width: 768px;
+  display: flex;
+  align-content: center;
+
+  th, td {
+    border: none;
+  }
+  .calc-button {
+    // max-width: 300px;
+  }
+  .history-container {
+    height: 100px;
+    overflow-y: auto;
+  }
+}

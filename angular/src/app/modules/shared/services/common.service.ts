@@ -17,9 +17,7 @@ export class CommonService {
     if(!isNullOrUndefined(options)){
       toastOptions = {...toastOptions, ...options.options}
     }
-    console.log("coming till here: ",toastOptions);
     this.toastr.clear();
-    console.log("toastr: ",this.toastr);
     this.toastr[type](message,toastOptions.title,toastOptions)
   }
 
