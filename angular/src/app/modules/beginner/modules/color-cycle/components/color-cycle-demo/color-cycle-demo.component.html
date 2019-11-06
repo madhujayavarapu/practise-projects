@@ -1,0 +1,111 @@
+<ng-page-info title="Color Cycle Demo" [demoLink]="'COLOR_CYCLE_DEMO_LINK'" docLink="COLOR_CYCLE_DOCS_LINK"></ng-page-info>
+
+<div class="row mb-3">
+  <div class="col-12 col-md d-flex">
+
+    <div class="card shadow-sm color-cycle-preview m-2">
+      <div class="card-header">
+        <h6 class="card-title">CSS Keyframes</h6>
+      </div>
+    </div>
+
+    <div class="card shadow-sm m-2 color-cycle-preview-scss" [ngClass]="scssColorClass">
+      <div class="card-header">
+        <h6 class="card-title">SCSS Dark to Lighter version</h6>
+      </div>
+      <div class="card-body">
+        <button class="btn btn-purple" (click)="changeScssColorClass('purple')">Purple</button>
+        <button class="btn btn-success" (click)="changeScssColorClass('green')">Green</button>
+        <button class="btn btn-danger" (click)="changeScssColorClass('red')">Red</button>
+        <button class="btn btn-primary" (click)="changeScssColorClass('blue')">Blue</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<h4 class="font-weight-bold">HSL Example:</h4>
+<hr>
+<div class="d-flex mb-3">
+  <div class="card shadow-sm m-2 hsl-class" id="hsl-div">
+    <div class="card-header">
+      <h6 class="card-title">HSL Approach</h6>
+    </div>
+  </div>
+  <div class="card shadow-sm flex-fill">
+    <div class="card-body">
+      <h6 class="font-weight-bold">HSL Values</h6>
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="hue">Hue</label>
+          <input type="number" class="form-control" name="hue" id="hue" [(ngModel)]="hue" [disabled]="state">
+        </div>
+        <div class="form-group col">
+          <label for="saturation">Saturation</label>
+          <input type="number" class="form-control" name="hue" id="hue" [(ngModel)]="saturation" [disabled]="state">
+        </div>
+        <div class="form-group col">
+          <label for="brightness">Brightness</label>
+          <input type="number" class="form-control" name="brightness" id="brightness" [(ngModel)]="brightness" [disabled]="state">
+        </div>
+        <div class="form-group col-12">
+          <label for="hsl-interval">HSL Interval</label>
+          <input type="number" class="form-control" name="hsl-interval" id="hsl-interval" [(ngModel)]="hslInterval" [disabled]="state">
+        </div>
+        <button class="btn btn-success" [ngClass]="{'btn-success': !state, 'btn-danger': state}"  
+          (click)="!!state ? stopHslChange() : startHslChange()">{{ state ? 'Stop' : 'Start' }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
+<h4 class="font-weight-bold">RGB Example:</h4>
+<hr>
+<div class="d-flex mb-3">
+  <div class="card shadow-sm hsl-class mr-2" id="rgb-div">
+    <div class="card-header">
+      <h6 class="card-title">RGB Approach</h6>
+    </div>
+  </div>
+  <div class="card shadow-sm flex-fill">
+    <div class="card-body">
+      <h6 class="font-weight-bold">RGB Values</h6>
+      <div class="form-row">
+        <div class="form-group col">
+          <label for="red">Red</label>
+          <input type="number" name="red" id="red" class="form-control" [(ngModel)]="red" [disabled]="startedInterval">
+        </div>
+        <div class="form-group col">
+          <label for="green">Green</label>
+          <input type="number" name="green" id="green" class="form-control" [(ngModel)]="green" [disabled]="startedInterval">
+        </div>
+        <div class="form-group col">
+          <label for="blue">Blue</label>
+          <input type="number" name="blue" id="blue" class="form-control" [(ngModel)]="blue" [disabled]="startedInterval">
+        </div>
+        <div class="form-group col-12">
+          <label for="interval">Increment Value</label>
+          <input type="number" name="interval" id="interval" class="form-control" [(ngModel)]="interval" [disabled]="startedInterval">
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="true" [(ngModel)]="incrementRed" [disabled]="startedInterval">Increment Red
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="true" [(ngModel)]="incrementGreen" [disabled]="startedInterval">Increment Green
+          </label>
+        </div>
+        <div class="form-check-inline">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" value="true" [(ngModel)]="incrementBlue" [disabled]="startedInterval">Increment Blue
+          </label>
+        </div>
+      </div>
+      <button class="btn mt-2" [ngClass]="{'btn-success': !startedInterval, 'btn-danger': startedInterval}" 
+          (click)="startedInterval ? stopColorChange() : startColorChange()">{{ startedInterval ? 'Stop' : 'Start' }}</button> 
+    </div>
+  </div>
+</div>

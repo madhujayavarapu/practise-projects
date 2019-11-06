@@ -1,0 +1,83 @@
+@import "../../../../../../../assets/scss/variables";
+
+$width: 300px;
+$height: 300px;
+
+@mixin  colorchange($color, $key) {
+    @keyframes colorchangeusingscss-#{$key} {
+        0% {background-color: $color - 150}
+        10% {background-color: $color - 120}
+        20% {background-color: $color - 90}
+        30% {background-color: $color - 60}
+        40% {background-color: $color - 30}
+        50% {background-color: $color}
+        60% {background-color: $color + 30}
+        70% {background-color: $color + 60}
+        80% {background-color: $color + 90}
+        90% {background-color: $color + 120}
+        100% {background-color: $color + 150}
+    }
+}
+
+:root{
+    --color-cycle-primary-color: #ca3838;
+}
+
+.hsl-class {
+    height:$height;
+    width:$width;
+}
+
+.color-cycle-preview {
+    width: $width;
+    height: $height;
+    background: var(--color-cycle-primary-color);
+    animation-name: colorchange;
+    animation-delay: 0s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.color-cycle-preview-scss {
+    width: $width;
+    height: $height;
+    animation-delay: 0s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    &.purple {
+        background: $purple;
+        animation-name: colorchangeusingscss-purple;
+    }
+    &.red {
+        background: $red;
+        animation-name: colorchangeusingscss-red;
+    }
+    &.green {
+        background: $green;
+        animation-name: colorchangeusingscss-green;
+    }
+    &.blue {
+        background: $blue;
+        animation-name: colorchangeusingscss-blue;
+    }
+}
+
+@include colorchange($purple, "purple");
+@include colorchange($red, "red");
+@include colorchange($blue, "blue");
+@include colorchange($green, "green");
+
+@keyframes colorchange {
+    0% {background-color: #ca3838}
+    10% {background-color: #ca38a6}
+    20% {background-color: #a838ca}
+    30% {background-color: #5d38ca}
+    40% {background-color: #3879ca}
+    50% {background-color: #38aeca}
+    60% { background-color: #38ca98}
+    70% {background-color: #38ca55}
+    80% {background-color: #6eca38}
+    90% {background-color: #cac138}
+    95% {background-color: #ca7a38}
+    100% {background-color: #ca3838}
+}

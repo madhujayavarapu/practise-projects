@@ -9,9 +9,9 @@ const routes = {
   CAUSE_EFFECT_DEMO_LINK: ['', 'beginner', 'cause-effect', 'demo'],
   CAUSE_EFFECT_DOCS_LINK: ['', 'beginner', 'cause-effect', 'docs'],
 
-  // COLOR_CYCLE_DEFAULT_LINK: ['', 'beginner', 'color-cycle'],
-  // COLOR_CYCLE_DEMO_LINK: ['', 'beginner', 'color-cycle', 'demo'],
-  // COLOR_CYCLE_DOCS_LINK: ['', 'beginner', 'color-cycle', 'docs'],
+  COLOR_CYCLE_DEFAULT_LINK: ['', 'beginner', 'color-cycle'],
+  COLOR_CYCLE_DEMO_LINK: ['', 'beginner', 'color-cycle', 'demo'],
+  COLOR_CYCLE_DOCS_LINK: ['', 'beginner', 'color-cycle', 'docs'],
 
   // COUNT_DOWN_TIMER_DEFAULT_LINK: ['', 'beginner', 'count-down-timer'],
   // COUNT_DOWN_TIMER_DEMO_LINK: ['', 'beginner', 'count-down-timer', 'demo'],
@@ -31,10 +31,10 @@ const navOptions = {
       'name': "Cause Effect",
       "link": routes.CAUSE_EFFECT_DEFAULT_LINK
     },
-    // {
-    //   'name': 'Color Cycle',
-    //   'link': routes.COLOR_CYCLE_DEFAULT_LINK
-    // },
+    {
+      'name': 'Color Cycle',
+      'link': routes.COLOR_CYCLE_DEFAULT_LINK
+    },
     // {
     //   "name": "Count Down Timer",
     //   "link": routes.COUNT_DOWN_TIMER_DEFAULT_LINK

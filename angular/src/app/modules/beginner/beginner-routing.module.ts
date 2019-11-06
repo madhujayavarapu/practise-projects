@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'calculator',
     loadChildren: () => import('./modules/calculator/calculator.module').then(m => m.CalculatorModule)
   },
+  {
+    path: 'color-cycle',
+    loadChildren: () => import('./modules/color-cycle/color-cycle.module').then(m => m.ColorCycleModule)
+  },
 ];
 
 @NgModule({

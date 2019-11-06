@@ -96,7 +96,7 @@ export class CalculatorComponent implements OnInit, OnDestroy {
             this.query.pop();
             this.query.push(event);
           }else {
-            this.commonSrv.showToastMessage("Ignore duplicate operators", "error", null);
+            this.commonSrv.showToastMessage("Ignore duplicate operators", "warning", null);
           }
         }else {
           this.query.push(eventType == 'OPERAND' ? parseInt(event) : event);
@@ -226,7 +226,6 @@ export class CalculatorComponent implements OnInit, OnDestroy {
   }
 
   validateQuery() {
-    console.log('vaidating query: ',this.query)
     this.splitQuery();
     this.evaluateFinalExpression();
   }
