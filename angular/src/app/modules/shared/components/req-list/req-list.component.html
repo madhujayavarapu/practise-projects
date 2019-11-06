@@ -1,0 +1,20 @@
+<h5 class="font-weight-bold">{{title}}</h5>
+<hr>
+<ul>
+  <li [class.list-group-item]="!!checkboxes" *ngFor="let eachReq of req">
+    <div class="d-flex align-items-center">
+      <input *ngIf="!!checkboxes" type="checkbox" class="form-control-sm mr-2" [checked]="eachReq.completed" disabled="eachReq.completed">
+      {{eachReq.req}}
+    </div>
+    <ng-container *ngIf="!!eachReq.sub && eachReq.sub.length > 0">
+      <ul>
+        <li [class.list-group-item]="!!checkboxes" *ngFor="let subReq of eachReq.sub">
+          <div class="d-flex align-items-center">
+            <input *ngIf="!!checkboxes" type="checkbox" class="form-control-sm mr-2" [checked]="subReq.completed" disabled="subReq.completed">
+            {{subReq.req}}
+          </div>
+        </li>
+      </ul>
+    </ng-container>
+  </li>
+</ul>
