@@ -1,4 +1,4 @@
-export const routes = {
+const routes = {
   CALCULATOR_DEFAULT_LINK: ['', 'beginner', 'calculator'],
   CALCULATOR_DEMO_LINK: ['', 'beginner', 'calculator', 'demo'],
   CALCULATOR_DOCS_LINK: ['', 'beginner', 'calculator', 'docs'],
@@ -18,15 +18,15 @@ export const routes = {
   // COUNT_DOWN_TIMER_DOCS_LINK: ['', 'beginner', 'count-down-timer', 'docs']
 }
 
-export const navOptions = {
+const navOptions = {
   "beginner": [{
       "name": "Border Radius Previewer",
       "link": routes.BORDER_RADIUS_PREVIEWER_DEFAULT_LINK
     },
-    // {
-    //   'name': "Calculator",
-    //   "link": routes.CALCULATOR_DEFAULT_LINK
-    // },
+    {
+      'name': "Calculator",
+      "link": routes.CALCULATOR_DEFAULT_LINK
+    },
     {
       'name': "Cause Effect",
       "link": routes.CAUSE_EFFECT_DEFAULT_LINK
@@ -55,8 +55,15 @@ export const navOptions = {
   ]
 }
 
+const toastrOptions = {
+  closeButton : true,
+  timeOut : 3000,
+  extendedTimeOut : 2000
+}
+
 
 export const PROJ_CONSTANTS = {
   NAV_OPTIONS: navOptions,
-  ROUTES: routes
+  ROUTES: routes,
+  TOASTR_CNST: toastrOptions
 }

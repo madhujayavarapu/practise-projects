@@ -1,6 +1,8 @@
 <!-- Page Wrapper -->
 <div id="wrapper">
   
+  <div toastContainer></div>
+
   <div class="menu-container" [class.loading]="loadingSidebar" [ngClass]="{'open': isSidebarToggled, 'closed': !isSidebarToggled}">
     <ng-sidebar (toggleSidebar)="toggleSidebar($event)" [hide]="true"></ng-sidebar>
     <ng-sidebar-menu class="sidebar-menu" [isToggled]="isSidebarToggled"></ng-sidebar-menu>
@@ -15,6 +17,9 @@
 
       <!-- Begin Page Content -->
       <div class="container-fluid">
+
+        <!-- Settings Button
+        <button class="btn settings-btn"><i class="fa fa-wrench" aria-hidden="true"></i></button> -->
 
         <!-- Page Heading -->
         <!-- <h1 class="h3 mb-4 text-gray-800">Blank Page</h1> -->

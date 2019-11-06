@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ToastContainerDirective } from 'ngx-toastr';
+import { CommonService } from './modules/shared';
 
 @Component({
   selector: 'ng-root',
@@ -6,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  @ViewChild(ToastContainerDirective) toastContainer: ToastContainerDirective;
 
   isSidebarToggled: Boolean = true;
   loadingSidebar: boolean = false;
