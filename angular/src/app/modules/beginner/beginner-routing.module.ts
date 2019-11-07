@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'dynamic-css-variables',
     loadChildren: () => import('./modules/dynamic-css-variables/dynamic-css-variables.module').then(m => m.DynamicCssVariablesModule)
   },
+  {
+    path: 'flip-image',
+    loadChildren: () => import('./modules/flip-image/flip-image.module').then(m => m.FlipImageModule)
+  },
 ];
 
 @NgModule({

@@ -20,7 +20,12 @@ const routes = {
   /** Dynamic CSS Variables Routing */
   DYNAMIC_CSS_VARIABLES_DEFAULT_LINK: ['', 'beginner', 'dynamic-css-variables'],
   DYNAMIC_CSS_VARIABLES_DEMO_LINK: ['', 'beginner', 'dynamic-css-variables', 'demo'],
-  DYNAMIC_CSS_VARIABLES_DOCS_LINK: ['', 'beginner', 'dynamic-css-variables', 'docs']
+  DYNAMIC_CSS_VARIABLES_DOCS_LINK: ['', 'beginner', 'dynamic-css-variables', 'docs'],
+
+  /** Flip Image Routing */
+  FLIP_IMAGE_DEFAULT_LINK: ['', 'beginner', 'flip-image'],
+  FLIP_IMAGE_DEMO_LINK: ['', 'beginner', 'flip-image', 'demo'],
+  FLIP_IMAGE_DOCS_LINK: ['', 'beginner', 'flip-image', 'docs']
 }
 
 const navOptions = {
@@ -47,6 +52,10 @@ const navOptions = {
     {
       "name": "Dynamic CSS Variables",
       "link": routes.DYNAMIC_CSS_VARIABLES_DEFAULT_LINK
+    },
+    {
+      "name": "Flip Image",
+      "link": routes.FLIP_IMAGE_DEFAULT_LINK
     }
   ],
   "intermediate": [{

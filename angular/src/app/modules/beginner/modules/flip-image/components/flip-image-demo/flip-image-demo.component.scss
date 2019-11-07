@@ -1,0 +1,77 @@
+.img-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+}
+.img{
+  max-width: 100%;
+  padding: 0 10px;;
+  height: 200px;
+}
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-blur {
+  -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+  filter: blur(2px);
+}
+
+.img-black-and-white {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.img-brightness {
+  filter: brightness(100%);
+}
+.img-contrast {
+  filter: contrast(150%);
+}
+.img-drop-shadow {
+  filter: drop-shadow(5px 2px 5px blue);
+}
+.img-grayscale {
+  filter: grayscale(50%);
+}
+.img-hue-rotate {
+  filter: hue-rotate(90deg);
+}
+.img-invert {
+  filter: invert(75%);
+}
+.img-opacity {
+  filter: opacity(25%);
+}
+.img-saturate {
+  filter: saturate(30%);
+}
+.img-sepia {
+  filter: sepia(40%);
+}
+
+.flip-image {
+  transition: transform 0.8s;
+  transform: scaleX(1);
+
+  &:hover {
+    transform: scaleX(-1);
+  }
+}
+.flip-vertical-image {
+  transition: transform 1s;
+  transform: scaleY(1);
+
+  &:hover {
+    transform: scaleY(-1);
+  }
+}
+.rotate-img {
+  transition: transform 1s;
+  transform: rotateY(0deg);
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
+}
