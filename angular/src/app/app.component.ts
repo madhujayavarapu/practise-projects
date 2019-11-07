@@ -1,3 +1,4 @@
+import { ModalService } from './modules/modal/services/modal.service';
 import { Component, ViewChild } from '@angular/core';
 import { ToastContainerDirective } from 'ngx-toastr';
 import { CommonService } from './modules/shared';
@@ -13,6 +14,8 @@ export class AppComponent {
   isSidebarToggled: Boolean = true;
   loadingSidebar: boolean = false;
 
+  constructor(private modalSrv: ModalService) {}
+
   toggleSidebar(val) {
     this.loadingSidebar = true;
     this.isSidebarToggled = !this.isSidebarToggled;
@@ -20,5 +23,9 @@ export class AppComponent {
     setTimeout(() => {
       this.loadingSidebar = false;
     }, 500)
+  }
+
+  removeModal() {
+    this.modalSrv.destroy();
   }
 }

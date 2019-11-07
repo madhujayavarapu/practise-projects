@@ -1,0 +1,16 @@
+<ng-page-info title="Count down timer Demo" demoLink="COUNT_DOWN_TIMER_DEMO_LINK" docLink="COUNT_DOWN_TIMER_DOCS_LINK"></ng-page-info>
+
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-3 mb-3">
+    <div class="card shadow-sm new-event">
+      <div class="card-body" (click)="openModal()">
+        <div class="d-flex flex-column align-items-center">
+          <i class="fas fa-plus-circle display-4 mb-2"></i>
+          <h4 class="font-weight-bold">Add New Event</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-count-down-timer class="col-12 col-md-6 col-lg-3 mb-3" *ngFor="let event of events" [model]="1" [event]="event">
+  </ng-count-down-timer>
+</div>

@@ -1,0 +1,16 @@
+.count-down-timer-card {
+  &.model-1{
+    .timer {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #212121;
+      &:last-child{
+          border: none;
+      }
+      h2 {
+          margin: 0;
+          text-align: center;
+      }
+    }
+  }
+}

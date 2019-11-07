@@ -1,0 +1,34 @@
+<div class="card shadow-sm count-down-timer-card model-1" *ngIf="model==1">
+  <div class="card-body py-1">
+    <h5 class="font-weight-bold text-center text-primary">{{event?.name}}</h5>
+    <hr class="my-1">
+    <div class="d-flex justify-content-center py-2">
+      <div class="px-3 timer">
+        <h2>{{days}}</h2>
+        <small>Days</small>
+      </div>
+      <div class="px-3 timer">
+        <h2>{{hours}}</h2>
+        <small>Hours</small>
+      </div>
+      <div class="px-3 timer">
+        <h2>{{minutes}}</h2>
+        <small>Minutes</small>
+      </div>
+      <div class="px-3 timer">
+        <h2>{{ seconds }}</h2>
+        <small>Seconds</small>
+      </div>
+    </div>
+    <hr class="my-1">
+    <p class="text-center mb-1 text-muted"><small class="font-weight-bold">{{ event?.date | date: 'dd MMM,yyyy' }}</small></p>
+  </div>
+</div>
+
+
+<div class="card shadow-sm count-down-timer-card model-2" *ngIf="model == 2">
+  <div class="card-body">
+    <h4>Model 2</h4>
+    <hr/>
+  </div>
+</div>

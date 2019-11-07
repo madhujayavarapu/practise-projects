@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'color-cycle',
     loadChildren: () => import('./modules/color-cycle/color-cycle.module').then(m => m.ColorCycleModule)
   },
+  {
+    path: 'count-down-timer',
+    loadChildren: () => import('./modules/count-down-timer/count-down-timer.module').then(m => m.CountDownTimerModule)
+  },
 ];
 
 @NgModule({

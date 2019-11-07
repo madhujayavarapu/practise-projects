@@ -1,0 +1,37 @@
+<div class="modal-dialog modal-lg">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Add Event</h4>
+      <button type="button" class="close" (click)="close()">&times;</button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+      <form [formGroup]="event">
+        <div class="form-row">
+          <div class="form-group col-12">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" formControlName="name" placeholder="Enter Event Name" class="form-control">
+          </div>
+          <div class="form-group col-12">
+            <label for="date">Date</label>
+            <input type="date" name="date" id="date" formControlName="date" class="form-control">
+          </div>
+          <div class="form-group col-12">
+            <label for="desc">Description</label>
+            <textarea name="desc" id="desc" rows="5" class="form-control" formControlName="desc" placeholder="What describes best about this event?"></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="close()">Close</button>
+      <button type="button" class="btn btn-primary" (click)="addEvent()">Add Event</button>
+    </div>
+
+  </div>
+</div>
