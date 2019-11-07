@@ -15,7 +15,12 @@ const routes = {
 
   COUNT_DOWN_TIMER_DEFAULT_LINK: ['', 'beginner', 'count-down-timer'],
   COUNT_DOWN_TIMER_DEMO_LINK: ['', 'beginner', 'count-down-timer', 'demo'],
-  COUNT_DOWN_TIMER_DOCS_LINK: ['', 'beginner', 'count-down-timer', 'docs']
+  COUNT_DOWN_TIMER_DOCS_LINK: ['', 'beginner', 'count-down-timer', 'docs'],
+
+  /** Dynamic CSS Variables Routing */
+  DYNAMIC_CSS_VARIABLES_DEFAULT_LINK: ['', 'beginner', 'dynamic-css-variables'],
+  DYNAMIC_CSS_VARIABLES_DEMO_LINK: ['', 'beginner', 'dynamic-css-variables', 'demo'],
+  DYNAMIC_CSS_VARIABLES_DOCS_LINK: ['', 'beginner', 'dynamic-css-variables', 'docs']
 }
 
 const navOptions = {
@@ -38,6 +43,10 @@ const navOptions = {
     {
       "name": "Count Down Timer",
       "link": routes.COUNT_DOWN_TIMER_DEFAULT_LINK
+    },
+    {
+      "name": "Dynamic CSS Variables",
+      "link": routes.DYNAMIC_CSS_VARIABLES_DEFAULT_LINK
     }
   ],
   "intermediate": [{

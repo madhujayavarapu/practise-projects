@@ -1,0 +1,53 @@
+<ng-page-info title="Dynamic CSS Variables Demo" [demoLink]="'DYNAMIC_CSS_VARIABLES_DEMO_LINK'" [docLink]="'DYNAMIC_CSS_VARIABLES_DOCS_LINK'">
+  
+</ng-page-info>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <!-- Form -->
+      <form [formGroup]="loginForm" class="dcv-loginForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" placeholder="Enter Username" autocomplete="off" formControlName="username" class="form-control username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" placeholder="********" formControlName="password" class="form-control password">
+        </div>
+        <button (click)="reset()" class="btn btn-danger mr-2">Cancel</button>
+        <button (click)="login()" class="btn btn-primary">Login</button>
+      </form>
+      <!-- End of Form -->
+      <hr>
+       <!-- Status -->
+      <ul class="status-list">
+        <li>
+          <template [ngTemplateOutlet]="status" [ngTemplateOutletContext]="{color: 'light-yellow', actualState: usernameStatus, validState: 1, text: 'Username should not be empty.'}"></template>
+        </li>
+        <li>
+          <template [ngTemplateOutlet]="status" [ngTemplateOutletContext]="{color: 'dark-orange', actualState: usernameStatus, validState: 2, text: 'Username Should not contain spaces.'}"></template>
+        </li>
+        <li>
+          <template [ngTemplateOutlet]="status" [ngTemplateOutletContext]="{color: 'light-red', actualState: usernameStatus, validState: 3, text: 'Username Should be equal to <strong>testuser</strong>'}"></template>
+        </li>
+        <li>
+          <template [ngTemplateOutlet]="status" [ngTemplateOutletContext]="{color: 'light-yellow', actualState: passwordStatus, validState: 1, text: 'Password should not be empty.'}"></template>
+        </li>
+        <li>
+          <template [ngTemplateOutlet]="status" [ngTemplateOutletContext]="{color: 'dark-orange', actualState: passwordStatus, validState: 2, text: 'Password Should not contain spaces.'}"></template>
+        </li>
+        <li>
+          <template [ngTemplateOutlet]="status" [ngTemplateOutletContext]="{color: 'light-red', actualState: passwordStatus, validState: 3, text: 'Password Should be equal to <strong>mypassword</strong>'}"></template>
+        </li>
+      </ul>
+      <!-- End of Status -->
+    </div>
+  </div>
+</div>
+
+<ng-template #status let-text="text" let-color="color" let-validState="validState" let-actualState="actualState">
+  <span class="box" [ngClass]="(actualState <= validState && actualState > 0) ? color : actualState > validState ? 'box-valid' : ''"></span>
+  <p class="status " [ngClass]="(actualState <= validState && actualState > 0) ? color : actualState > validState ? 'status-valid' : ''" [innerHTML]="text"></p>
+  <i class="fas fa-check h5 ml-2 status status-valid" *ngIf="actualState > validState"></i>
+  <i class="fas fa-times h5 ml-2 status" [ngClass]="color" *ngIf="actualState <= validState && actualState > 0"></i>
+</ng-template>

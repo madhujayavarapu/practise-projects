@@ -1,0 +1,62 @@
+.dcv-loginForm {
+  label {
+    margin: 0;
+  }
+  .username {
+    background: var(--username-bg);
+    color: var(--dcv-text-color);
+    border-color: var(--dcv-text-color);
+  }
+  .password {
+    background: var(--password-bg);
+    color: var(--dcv-text-color);
+    border-color: var(--dcv-text-color);
+  }
+}
+
+.status-list {
+  li {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+
+    .box {
+      width: 15px;
+      height: 15px;
+      margin-right: 0.5rem;
+      border-radius: 4px;
+      background-color: #000;
+
+      &.light-yellow {
+        background-color: #FF9800;
+      }
+      &.dark-orange {
+        background-color: #E91E63;
+      }
+      &.light-red {
+        background-color: #FF7043;
+      }
+
+      &.box-valid {
+        background-color: #66BB6A;
+      }
+    }
+    .status {
+      color: #000;
+
+      &.light-yellow {
+        color: #FF9800;
+      }
+      &.dark-orange {
+        color: #E91E63;
+      }
+      &.light-red {
+        color: #FF7043;
+      }
+      &.status-valid {
+        color: #66BB6A;
+      }
+    }
+    
+  }
+}

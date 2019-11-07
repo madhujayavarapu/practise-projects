@@ -1,0 +1,14 @@
+<ng-page-info title="Dynamic CSS Variables Docs" [demoLink]="'DYNAMIC_CSS_VARIABLES_DEMO_LINK'" [docLink]="'DYNAMIC_CSS_VARIABLES_DOCS_LINK'"></ng-page-info>
+<div class="container doc-container">
+    <div class="card">
+      <div class="card-body">
+          <p>CSS variables are a powerful tool that lets the developer associate a symbolic name with a value, and then use that name in the stylesheet wherever that value is required. The advantage is that when a change to that value is required it only needs to change in the CSS variable definition rather than in the many spots it may be used.</p>
+          <p>What can make this even more powerful is to dynamically change the value of a CSS variable at runtime.</p>
+          <p>The goal of this app is to dynamically change the background color of text boxes based to let you gain experience using both CSS variables and dynamically changing them from within the app.</p>          
+          
+          <ng-req-list title="User Stories" [req]="userStories"></ng-req-list>
+  
+          <ng-req-list title="Bonus Features" [req]="bonusFeatures"></ng-req-list>  
+        </div>
+    </div>
+  </div>

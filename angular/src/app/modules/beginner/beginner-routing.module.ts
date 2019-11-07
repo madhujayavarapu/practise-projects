@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'count-down-timer',
     loadChildren: () => import('./modules/count-down-timer/count-down-timer.module').then(m => m.CountDownTimerModule)
   },
+  {
+    path: 'dynamic-css-variables',
+    loadChildren: () => import('./modules/dynamic-css-variables/dynamic-css-variables.module').then(m => m.DynamicCssVariablesModule)
+  },
 ];
 
 @NgModule({

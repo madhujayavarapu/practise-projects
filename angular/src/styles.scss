@@ -15,6 +15,12 @@
 
 @import "~ngx-toastr/toastr-bs4-alert.scss";
 
+:root {
+  --username-bg: #fff;
+  --password-bg: #fff;
+  --dcv-text-color: #000;
+}
+
 .bg-gradient-purple {
   background: $purple - 50;
 }
@@ -39,6 +45,7 @@
   }
 }
 .doc-container {
+  margin-bottom: 1rem;
   p {
     text-indent: 2rem;
     margin: 10px;
