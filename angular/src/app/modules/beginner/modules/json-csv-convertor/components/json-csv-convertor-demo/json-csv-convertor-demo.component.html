@@ -1,0 +1,16 @@
+<ng-page-info title="Json-CSV Convertor Demo" [demoLink]="'JSON_CSV_CONVERTOR_DEMO_LINK'" [docLink]="'JSON_CSV_CONVERTOR_DOCS_LINK'"
+ [demoLinkMatch]="false"></ng-page-info>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" [routerLinkActive]="'active'" data-toggle="tab" [routerLink]="['csv']">CSV</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLinkActive]="'active'" data-toggle="tab" [routerLink]="['json']">JSON</a>
+  </li>
+</ul>
+<!-- Content Panel -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade show active mt-2">
+    <router-outlet></router-outlet>
+  </div>
+</div>

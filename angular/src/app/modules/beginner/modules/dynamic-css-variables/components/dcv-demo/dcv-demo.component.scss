@@ -6,11 +6,33 @@
     background: var(--username-bg);
     color: var(--dcv-text-color);
     border-color: var(--dcv-text-color);
+
+    &:hover {
+      border: none;
+      box-shadow: none;
+      border: 1px dashed var(--dcv-text-color);
+    }
+
+    &:focus {
+      box-shadow: none;
+      border: 2px solid var(--dcv-text-color);
+    }
   }
   .password {
     background: var(--password-bg);
     color: var(--dcv-text-color);
     border-color: var(--dcv-text-color);
+
+    &:hover {
+      border: none;
+      box-shadow: none;
+      border: 1px dashed var(--dcv-text-color);
+    }
+    &:focus {
+      box-shadow: none;
+      border: none;
+      border: 2px solid var(--dcv-text-color);
+    }
   }
 }
 

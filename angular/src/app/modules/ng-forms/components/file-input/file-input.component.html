@@ -1,0 +1,6 @@
+<!-- <input type="file"> -->
+<div class="file-container" (click)="fileInput.click()">
+  <span class="choose-file">Choose file: </span>
+  <span>{{file ? ' '+file.name : ' Click here' }}</span>
+  <input class="file-input" #fileInput type="file"> 
+</div>

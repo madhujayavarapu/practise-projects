@@ -1,0 +1,48 @@
+<div class="row mb-2">
+  <div class="col-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <form [formGroup]="csvForm">
+          <div class="form-group">
+            <label for="type">Input Type:</label>
+            <select name="type" id="type" class="form-control" formControlName="inputType">
+              <option value="manual">Manual</option>
+              <option value="file">File</option>
+            </select>
+          </div>
+
+          <div class="form-group" *ngIf="csvForm.get('inputType').value == 'manual'">
+            <textarea name="csv" id="csv" class="form-control mb-2" placeholder="Place Your CSV Here" formControlName="csv" rows="10"></textarea>
+          </div>
+
+          <div class="form-group" *ngIf="csvForm.get('inputType').value == 'file'">
+            <label for="csvFile">CSV File</label>
+            <ng-file-input formControlName="csvFile"></ng-file-input>
+          </div>
+
+          <div class="form-group">
+            <label for="delimeter">Delimeter:</label>
+            <input type="text" name="delimeter" id="delimeter" formControlName="delimeter" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <input type="checkbox" class="mr-1" formControlName="headersPresent" id="headersPresent" value="true"/>
+            <label for="headersPresent">Headers Present</label>
+          </div>
+          <button class="btn btn-primary" [disabled]="!csvForm.valid" (click)="convertToJson()">Convert to JSON</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4 class="text-success font-weight-bold">Preview:</h4>
+          <button class="btn btn-primary" (click)="downloadJson()" *ngIf="!!json">Download Json</button>
+        </div>
+        <pre class="result-container" *ngIf="!!json" [innerHTML]="json|json"></pre>
+      </div>
+    </div>
+  </div>
+</div>

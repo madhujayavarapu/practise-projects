@@ -25,7 +25,12 @@ const routes = {
   /** Flip Image Routing */
   FLIP_IMAGE_DEFAULT_LINK: ['', 'beginner', 'flip-image'],
   FLIP_IMAGE_DEMO_LINK: ['', 'beginner', 'flip-image', 'demo'],
-  FLIP_IMAGE_DOCS_LINK: ['', 'beginner', 'flip-image', 'docs']
+  FLIP_IMAGE_DOCS_LINK: ['', 'beginner', 'flip-image', 'docs'],
+
+  /** Json-CSV Convertor */
+  JSON_CSV_CONVERTOR_DEFAULT_LINK: ['', 'beginner', 'json-csv-convertor'],
+  JSON_CSV_CONVERTOR_DEMO_LINK: ['', 'beginner', 'json-csv-convertor', 'demo'],
+  JSON_CSV_CONVERTOR_DOCS_LINK: ['', 'beginner', 'json-csv-convertor', 'docs'],
 }
 
 const navOptions = {
@@ -56,6 +61,10 @@ const navOptions = {
     {
       "name": "Flip Image",
       "link": routes.FLIP_IMAGE_DEFAULT_LINK
+    },
+    {
+      "name": "CSV - JSON Convertor",
+      "link": routes.JSON_CSV_CONVERTOR_DEFAULT_LINK
     }
   ],
   "intermediate": [{

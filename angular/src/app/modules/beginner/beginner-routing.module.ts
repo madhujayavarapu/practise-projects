@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'flip-image',
     loadChildren: () => import('./modules/flip-image/flip-image.module').then(m => m.FlipImageModule)
   },
+  {
+    path: 'json-csv-convertor',
+    loadChildren: () => import('./modules/json-csv-convertor/json-csv-convertor.module').then(m => m.JsonCsvConvertorModule)
+  },
 ];
 
 @NgModule({

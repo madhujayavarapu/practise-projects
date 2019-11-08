@@ -11,6 +11,8 @@ export class PageInfoComponent implements OnInit {
   @Input('title') title: string;
   @Input('demoLink') demoLink: string[];
   @Input('docLink') docLink: string[];
+  @Input('demoLinkMatch') demoLinkMatch: boolean = true;
+  @Input('docLinkMatch') docLinkMatch: boolean = true;
 
   routes = PROJ_CONSTANTS.ROUTES;
 

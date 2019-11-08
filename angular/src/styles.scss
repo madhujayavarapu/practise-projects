@@ -125,3 +125,18 @@ $sidemenuWidth:240px;
   90% {transform: rotate(324deg)}
   100% {transform: rotate(360deg)}
 }
+
+.form-control {
+  border-color: #212121;
+
+  &:hover {
+    border: none;
+    box-shadow: none;
+    border: 1px dashed #212121;
+  }
+
+  &:focus {
+    box-shadow: none;
+    border: 2px solid #212121;
+  }
+}

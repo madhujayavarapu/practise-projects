@@ -1,10 +1,10 @@
 <div class="d-flex justify-content-between align-items-center">
   <h4 class="text-purple font-weight-bold">{{ title }}</h4>
   <div class="btn-group mr-2">
-    <a class="btn" [routerLink]="routes[demoLink]" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+    <a class="btn" [routerLink]="routes[demoLink]" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: demoLinkMatch}">
       <i class="fa fa-eye"></i> Demo 
     </a>
-    <a class="btn" [routerLink]="routes[docLink]" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+    <a class="btn" [routerLink]="routes[docLink]" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: docLinkMatch}">
       <i class="fa fa-file"></i> Doc
     </a>
   </div>
