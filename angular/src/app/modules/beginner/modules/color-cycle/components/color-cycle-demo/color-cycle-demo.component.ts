@@ -16,7 +16,8 @@ export class ColorCycleDemoComponent implements OnInit {
   brightness:number = 50;
   saturation: number = 100;
   state: boolean = false;
-  hslInterval: number = 30;
+  hslInterval: number = 1;
+  hslDelay: number = 80; //ms
 
   incrementHue: boolean = true;
   incrementSat: boolean = false;
@@ -26,11 +27,11 @@ export class ColorCycleDemoComponent implements OnInit {
   blue: number = 10;
   green: number = 50;
   startedInterval: boolean = false;
-  interval: number = 8;
+  interval: number = 1;
 
   incrementRed: boolean = true;
-  incrementGreen: boolean = true;
-  incrementBlue: boolean = true;
+  incrementGreen: boolean = false;
+  incrementBlue: boolean = false;
 
   colorChanger;
   hslChanger;
@@ -82,7 +83,7 @@ export class ColorCycleDemoComponent implements OnInit {
       if(this.incrementHue)
         hue =   hue >= 360 ? 0 : hue + this.hslInterval;
       document.getElementById('hsl-div').style.background = "hsl("+hue+","+saturation+"%,"+brightness+"%)";
-    }, this.delay);
+    }, this.hslDelay);
   }
 
   changeScssColorClass(val) {

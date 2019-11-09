@@ -29,37 +29,42 @@ $height: 300px;
 }
 
 .color-cycle-preview {
-    width: $width;
-    height: $height;
+  width: $width;
+  height: $height;
+  .card-body {
     background: var(--color-cycle-primary-color);
     animation-name: colorchange;
     animation-delay: 0s;
     animation-duration: 5s;
     animation-iteration-count: infinite;
+  }
 }
 
 .color-cycle-preview-scss {
-    width: $width;
-    height: $height;
-    animation-delay: 0s;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+  width: $width;
+  height: $height;
+  animation-delay: 0s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+
+  .card-body {
     &.purple {
-        background: $purple;
-        animation-name: colorchangeusingscss-purple;
+      background: $purple;
+      animation-name: colorchangeusingscss-purple;
     }
     &.red {
-        background: $red;
-        animation-name: colorchangeusingscss-red;
+      background: $red;
+      animation-name: colorchangeusingscss-red;
     }
     &.green {
-        background: $green;
-        animation-name: colorchangeusingscss-green;
+      background: $green;
+      animation-name: colorchangeusingscss-green;
     }
     &.blue {
-        background: $blue;
-        animation-name: colorchangeusingscss-blue;
+      background: $blue;
+      animation-name: colorchangeusingscss-blue;
     }
+  }
 }
 
 @include colorchange($purple, "purple");

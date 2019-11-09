@@ -7,13 +7,14 @@
       <div class="card-header">
         <h6 class="card-title">CSS Keyframes</h6>
       </div>
+      <div class="card-body"></div>
     </div>
 
-    <div class="card shadow-sm m-2 color-cycle-preview-scss" [ngClass]="scssColorClass">
+    <div class="card shadow-sm m-2 color-cycle-preview-scss">
       <div class="card-header">
         <h6 class="card-title">SCSS Dark to Lighter version</h6>
       </div>
-      <div class="card-body">
+      <div class="card-body" [ngClass]="scssColorClass">
         <button class="btn btn-purple" (click)="changeScssColorClass('purple')">Purple</button>
         <button class="btn btn-success" (click)="changeScssColorClass('green')">Green</button>
         <button class="btn btn-danger" (click)="changeScssColorClass('red')">Red</button>
@@ -27,10 +28,11 @@
 <h4 class="font-weight-bold">HSL Example:</h4>
 <hr>
 <div class="d-flex mb-3">
-  <div class="card shadow-sm m-2 hsl-class" id="hsl-div">
+  <div class="card shadow-sm m-2 hsl-class">
     <div class="card-header">
       <h6 class="card-title">HSL Approach</h6>
     </div>
+    <div class="card-body" id="hsl-div"></div>
   </div>
   <div class="card shadow-sm flex-fill">
     <div class="card-body">
@@ -48,9 +50,15 @@
           <label for="brightness">Brightness</label>
           <input type="number" class="form-control" name="brightness" id="brightness" [(ngModel)]="brightness" [disabled]="state">
         </div>
-        <div class="form-group col-12">
-          <label for="hsl-interval">HSL Interval</label>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-6">
+          <label for="hsl-interval">HSL Increment Value</label>
           <input type="number" class="form-control" name="hsl-interval" id="hsl-interval" [(ngModel)]="hslInterval" [disabled]="state">
+        </div>
+        <div class="form-group col-6">
+          <label for="hsl-delay">HSL Interval <span class="text-xs">(ms)</span></label>
+          <input type="number" class="form-control" name="hsl-delay" id="hsl-delay" [(ngModel)]="hslDelay" [disabled]="state">
         </div>
         <button class="btn btn-success" [ngClass]="{'btn-success': !state, 'btn-danger': state}"  
           (click)="!!state ? stopHslChange() : startHslChange()">{{ state ? 'Stop' : 'Start' }}</button>
@@ -63,10 +71,11 @@
 <h4 class="font-weight-bold">RGB Example:</h4>
 <hr>
 <div class="d-flex mb-3">
-  <div class="card shadow-sm hsl-class mr-2" id="rgb-div">
+  <div class="card shadow-sm hsl-class mr-2">
     <div class="card-header">
       <h6 class="card-title">RGB Approach</h6>
     </div>
+    <div class="card-body" id="rgb-div"></div>
   </div>
   <div class="card shadow-sm flex-fill">
     <div class="card-body">
@@ -84,9 +93,15 @@
           <label for="blue">Blue</label>
           <input type="number" name="blue" id="blue" class="form-control" [(ngModel)]="blue" [disabled]="startedInterval">
         </div>
-        <div class="form-group col-12">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-6">
           <label for="interval">Increment Value</label>
           <input type="number" name="interval" id="interval" class="form-control" [(ngModel)]="interval" [disabled]="startedInterval">
+        </div>
+        <div class="form-group col-6">
+          <label for="rgb-delay">RGB Interval <span class="text-xs">(ms)</span></label>
+          <input type="number" class="form-control" name="rgb-delay" id="rgb-delay" [(ngModel)]="delay" [disabled]="startedInterval">
         </div>
         <div class="form-check-inline">
           <label class="form-check-label">
