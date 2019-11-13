@@ -2,7 +2,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { requiredFileType } from 'src/app/modules/ng-forms/validators/requiredFileType';
 import { FileUtilsService } from 'src/app/modules/utils';
-import Spreadsheet from 'x-data-spreadsheet';
+// import Spreadsheet from 'x-data-spreadsheet';
 
 @Component({
   selector: 'ng-excel-convertor',
@@ -28,10 +28,8 @@ export class ExcelConvertorComponent implements OnInit {
   }
 
   convertToJson() {
-    console.log("come here: ",this.excelForm.value);
     let value = this.excelForm.value;
     this.fileUtils.readExcelFile(value.file).then((res) => {
-      // console.log(res);
       this.excelInfo = res;
       if(!!this.excelInfo.sheets && this.excelInfo.sheets.length > 0) {
         this.activeSheetHtml = this.getTableHtml(this.excelInfo.info[0].html);
@@ -46,21 +44,21 @@ export class ExcelConvertorComponent implements OnInit {
     });
   }
 
-  loadSpreadSheet(json: any = {}) {
-    console.log("selector: ",document.querySelector('#spreadsheet'));
-    const s = new Spreadsheet("#spreadsheet", {
-        view: {
-          height: () => 500,
-          width: () => 800,
-        }
-      })
-      .loadData(json) // load data
-      .change(data => {
-        // save data to db
-        console.log("data changed: ",data);
-      });
-    s.validate();
-  }
+  // loadSpreadSheet(json: any = {}) {
+  //   console.log("selector: ",document.querySelector('#spreadsheet'));
+  //   const s = new Spreadsheet("#spreadsheet", {
+  //       view: {
+  //         height: () => 500,
+  //         width: () => 800,
+  //       }
+  //     })
+  //     .loadData(json) // load data
+  //     .change(data => {
+  //       // save data to db
+  //       console.log("data changed: ",data);
+  //     });
+  //   s.validate();
+  // }
 
   getTableHtml(html: string): string {
     return html.substring(html.indexOf('<table>'), html.indexOf('</table>')+8).replace('<table>', '<table class="table table-bordered">');
