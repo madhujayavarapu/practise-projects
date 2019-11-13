@@ -126,6 +126,12 @@ $sidemenuWidth:240px;
   100% {transform: rotate(360deg)}
 }
 
+.form-group {
+  label {
+    margin: 0;
+    font-size: 13px
+  }
+}
 .form-control {
   border-color: #212121;
 

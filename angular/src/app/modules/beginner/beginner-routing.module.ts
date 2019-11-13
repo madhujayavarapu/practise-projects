@@ -35,6 +35,10 @@ const routes: Routes = [
     path: 'json-csv-convertor',
     loadChildren: () => import('./modules/json-csv-convertor/json-csv-convertor.module').then(m => m.JsonCsvConvertorModule)
   },
+  {
+    path: 'lorem-ipsum-generator',
+    loadChildren: () => import('./modules/lorem-ipsum-gen/lorem-ipsum-gen.module').then(m => m.LoremIpsumGenModule)
+  },
 ];
 
 @NgModule({

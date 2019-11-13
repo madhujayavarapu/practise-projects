@@ -31,6 +31,11 @@ const routes = {
   JSON_CSV_CONVERTOR_DEFAULT_LINK: ['', 'beginner', 'json-csv-convertor'],
   JSON_CSV_CONVERTOR_DEMO_LINK: ['', 'beginner', 'json-csv-convertor', 'demo'],
   JSON_CSV_CONVERTOR_DOCS_LINK: ['', 'beginner', 'json-csv-convertor', 'docs'],
+
+  /** Lorem Ipsum Generator */
+  LOREM_IPSUM_GENERATOR_DEFAULT_LINK: ['', 'beginner', 'lorem-ipsum-generator'],
+  LOREM_IPSUM_GENERATOR_DEMO_LINK: ['', 'beginner', 'lorem-ipsum-generator', 'demo'],
+  LOREM_IPSUM_GENERATOR_DOCS_LINK: ['', 'beginner', 'lorem-ipsum-generator', 'docs']
 }
 
 const navOptions = {
@@ -65,6 +70,10 @@ const navOptions = {
     {
       "name": "CSV - JSON Convertor",
       "link": routes.JSON_CSV_CONVERTOR_DEFAULT_LINK
+    },
+    {
+      "name": 'Lorem Ipsum Generator',
+      "link": routes.LOREM_IPSUM_GENERATOR_DEFAULT_LINK
     }
   ],
   "intermediate": [{

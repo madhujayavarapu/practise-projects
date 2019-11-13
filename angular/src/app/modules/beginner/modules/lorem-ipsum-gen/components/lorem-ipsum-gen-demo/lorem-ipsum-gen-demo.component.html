@@ -1,0 +1,30 @@
+<ng-page-info title="Lorem Ipsum Generator Demo" demoLink="LOREM_IPSUM_GENERATOR_DEMO_LINK" docLink="LOREM_IPSUM_GENERATOR_DOCS_LINK"></ng-page-info>
+<div class="card shadow-sm">
+  <div class="card-body">
+    <form [formGroup]="loremForm">
+      <div class="form-row">
+        <div class="form-group col-12 col-md">
+          <label for="paragraphs">Sentences Range:</label>
+          <nouislider [config]="rangeConfig" formControlName="sentences" [step]="1"></nouislider>
+        </div>
+        <div class="form-group col-12 col-md">
+          <label for="paragraphs">Words Range:</label>
+          <nouislider [config]="rangeConfig" formControlName="words" [step]="1"></nouislider>
+        </div>
+        <div class="form-group col-12 col-md">
+          <label for="paragraphs">Number of Paragraphs:</label>
+          <input type="number" name="paragraph" id="paragraph" formControlName="paragraphs" min="0" max="100" class="form-control">
+        </div>
+        <div class="col-12 col-md-auto align-self-center mt-1">
+          <button class="btn btn-primary" [disabled]="!loremForm.valid" (click)="generate()">Generate</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="card shadow-sm mt-2">
+  <div class="card-body">
+    <p *ngFor="let p of paragraphs">{{p}}</p>
+  </div>
+</div>
