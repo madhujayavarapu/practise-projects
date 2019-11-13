@@ -7,6 +7,7 @@
         <ng-container [ngSwitch]="activeCalculator">
           <ng-calculator *ngSwitchCase="'basic'"></ng-calculator>
           <ng-time-calculator *ngSwitchCase="'time'"></ng-time-calculator>
+          <ng-currency-calculator *ngSwitchCase="'currency'"></ng-currency-calculator>
           <ng-container *ngSwitchDefault="">
             <h4>Not yet implemented.</h4>
           </ng-container>
@@ -20,9 +21,19 @@
         Basic Calculator
       </div>
     </div>
-    <div class="card shadow-sm m-2 cursor-pointer" [ngClass]="{'bg-primary text-light': activeCalculator == 'time'}" (click)="activeCalculator = 'time'">
+    <div class="card shadow-sm m-2 cursor-pointer" [ngClass]="{'bg-primary text-light': activeCalculator == 'time'}" (click)="openCalc('time')">
       <div class="card-body">
         Time Calculator
+      </div>
+    </div>
+    <div class="card shadow-sm m-2 cursor-pointer" [ngClass]="{'bg-primary text-light': activeCalculator == 'currency'}" (click)="openCalc('currency')">
+      <div class="card-body">
+        Currency Calculator
+      </div>
+    </div>
+    <div class="card shadow-sm m-2 cursor-pointer" [ngClass]="{'bg-primary text-light': activeCalculator == 'number'}" (click)="openCalc('number')">
+      <div class="card-body">
+        Number Convertor
       </div>
     </div>
   </div>

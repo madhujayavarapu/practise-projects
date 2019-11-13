@@ -10,9 +10,11 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
 import { TimeCalculatorComponent } from './components/time-calculator/time-calculator.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { NgFormsModule } from 'src/app/modules/ng-forms/ng-forms.module';
+import { CurrencyCalculatorComponent } from './components/currency-calculator/currency-calculator.component';
+import { NumberConvertorComponent } from './components/number-convertor/number-convertor.component';
 
 @NgModule({
-  declarations: [CalculatorDemoComponent, CalculatorDocsComponent, CalculatorComponent, TimeCalculatorComponent, DropdownComponent],
+  declarations: [CalculatorDemoComponent, CalculatorDocsComponent, CalculatorComponent, TimeCalculatorComponent, DropdownComponent, CurrencyCalculatorComponent, NumberConvertorComponent],
   imports: [
     CommonModule,
     CalculatorRoutingModule,

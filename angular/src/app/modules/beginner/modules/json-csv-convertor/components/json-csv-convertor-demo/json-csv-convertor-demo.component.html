@@ -2,13 +2,15 @@
  [demoLinkMatch]="false"></ng-page-info>
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link" [routerLinkActive]="'active'" data-toggle="tab" [routerLink]="['csv']">CSV</a>
+    <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['csv']">CSV</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLinkActive]="'active'" data-toggle="tab" [routerLink]="['json']">JSON</a>
+    <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['json']">JSON</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" [routerLinkActive]="'active'" [routerLink]="['excel']">Excel</a>
   </li>
 </ul>
-<!-- Content Panel -->
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade show active mt-2">
     <router-outlet></router-outlet>

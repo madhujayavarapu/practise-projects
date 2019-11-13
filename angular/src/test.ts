@@ -21,7 +21,7 @@ getTestBed().initTestEnvironment(
 const context = require.context('./', true, /app.component\.spec\.ts$/);
 
 // If you want to test a particular module then use below one.
-// const context = require.context('./MODULE_PATH', true, /\.spec\.ts$/);
+// const context = require.context('./app/modules/utils', true, /file-utils.service\.spec\.ts$/);
 
 // And load the modules.
 context.keys().map(context);

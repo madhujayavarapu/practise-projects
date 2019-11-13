@@ -88,9 +88,29 @@ const toastrOptions = {
   extendedTimeOut : 2000
 }
 
+const currencyMap = {
+  'rupee': {
+    'dollar': 0.014,
+    's-rupee': 2.53,
+    'yuan': 0.098,
+    'aus-dollar': 0.020
+  }
+}
+
+const romanNumMap = {
+  'M': 1000,
+  'D': 500,
+  'C': 100,
+  'L': 50,
+  'X': 10,
+  'V': 5,
+  'I': 1
+}
 
 export const PROJ_CONSTANTS = {
   NAV_OPTIONS: navOptions,
   ROUTES: routes,
-  TOASTR_CNST: toastrOptions
+  TOASTR_CNST: toastrOptions,
+  CURRENCY_MAP: currencyMap,
+  ROMAN_NUMBER_MAP: romanNumMap
 }

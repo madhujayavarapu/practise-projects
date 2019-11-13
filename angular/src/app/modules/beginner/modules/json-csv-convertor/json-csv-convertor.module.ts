@@ -10,9 +10,10 @@ import { CsvToJsonComponent } from './components/csv-to-json/csv-to-json.compone
 import { JsonCsvConvertorDemoComponent } from './components/json-csv-convertor-demo/json-csv-convertor-demo.component';
 import { JsonCsvConvertorDocsComponent } from './components/json-csv-convertor-docs/json-csv-convertor-docs.component';
 import { NgFormsModule } from 'src/app/modules/ng-forms';
+import { ExcelConvertorComponent } from './components/excel-convertor/excel-convertor.component';
 
 @NgModule({
-  declarations: [JsonToCsvComponent, CsvToJsonComponent, JsonCsvConvertorDemoComponent, JsonCsvConvertorDocsComponent],
+  declarations: [JsonToCsvComponent, CsvToJsonComponent, JsonCsvConvertorDemoComponent, JsonCsvConvertorDocsComponent, ExcelConvertorComponent],
   imports: [
     CommonModule,
     JsonCsvConvertorRoutingModule,

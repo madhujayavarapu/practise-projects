@@ -2,8 +2,8 @@ import { FILE_CNST } from './../constant/file.cnst';
 import { ICsvOptions } from './../models/csv';
 import { Injectable } from '@angular/core';
 import { isNullOrUndefined } from 'util';
-import { Observable } from 'rxjs';
 import { IJsonOptions } from '../models/json';
+import * as XLSX from 'xlsx';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class FileUtilsService {
 
   constructor() { }
 
+  /** -------------------- Reading Files ----------------------------------- */
   readCSVFile(file: File): Promise<any> {
     let promise = new Promise((resolve, reject) => {
       let reader = new FileReader();
@@ -25,6 +26,79 @@ export class FileUtilsService {
     })
     return promise;
   }
+
+  readJsonFile(file: File): Promise<any> {
+    let promise = new Promise((resolve, reject) => {
+      var reader = new FileReader();
+      reader.onloadend = () => {
+        resolve(reader.result);
+      }
+      reader.onerror = () => {
+        reject(null);
+      }
+      reader.readAsBinaryString(file);
+    });
+    return promise;
+  }
+
+  readExcelFile(file: File): Promise<any> {
+    let promise = new Promise((resolve, reject) => {
+      if(typeof FileReader !== 'undefined') {
+        let reader = new FileReader();
+
+        reader.onerror = () => {
+          reject(reader.error);
+        }
+
+        //For Browsers other than IE.
+        if(reader.readAsBinaryString) {
+          reader.onloadend = () => {
+            resolve(this.processExcel(reader.result));
+          }
+          reader.readAsBinaryString(file);
+        }else {
+          //For IE Browser.
+          reject(null);
+          // reader.onload = (e) => {
+          //     var data = "";
+          //     var bytes = new Uint8Array(e.target.result);
+          //     for (var i = 0; i < bytes.byteLength; i++) {
+          //         data += String.fromCharCode(bytes[i]);
+          //     }
+          // };
+          // reader.readAsArrayBuffer(file);
+        }
+        
+      }else {
+        console.error("This browser does not support HTML5");
+        reject(null);
+      }
+    })
+    return promise;
+  }
+
+  processExcel(data) {
+    //Read the Excel File data.
+    var workbook = XLSX.read(data, {
+        type: 'binary'
+    });
+
+    let sheets = workbook.SheetNames;
+    let sheetsInfo = [];
+    sheets.forEach((sheet) => {
+      let ws = workbook.Sheets[sheet];
+      let obj = {
+        sheetName: sheet,
+        html: XLSX.utils.sheet_to_html(ws),
+        mergeCells: ws["!merges"],
+        json: XLSX.utils.sheet_to_json(ws)
+      }
+      sheetsInfo.push(obj);
+    })
+
+    return {sheets, info: sheetsInfo};
+  }
+  /** -------------------- End of Reading Files ----------------------------- */
 
   CSVToArray(strData, strDelimiter) {
     strDelimiter = (strDelimiter || ",");
@@ -75,6 +149,7 @@ export class FileUtilsService {
     return (arrData);
   }
 
+  /**---------------------- File Conversions --------------------------------- */
   convertCsvToJson(csv: string, options: ICsvOptions): Object[] {
     options = this.formatCsvOptions(options);
     if(!isNullOrUndefined(csv)) {
@@ -171,20 +246,15 @@ export class FileUtilsService {
     return promise;
   }
 
-  readJsonFile(file: File): Promise<any> {
+  convertExcelFileToJson(file: File, options: any): Promise<any> {
     let promise = new Promise((resolve, reject) => {
-      var reader = new FileReader();
-      reader.onloadend = () => {
-        resolve(reader.result);
-      }
-      reader.onerror = () => {
-        reject(null);
-      }
-      reader.readAsBinaryString(file);
-    });
+      resolve([]);
+    })
     return promise;
   }
+  /**---------------------- End of File Conversions ------------------------------ */
 
+  /** ------------------------- Checking Valid Files ----------------------------- */
   isValidJson(obj) {
     if(typeof obj == 'object') {
       return true;
@@ -199,15 +269,12 @@ export class FileUtilsService {
       return false;
     }
   }
+  /** ------------------------- End of Checking Valid Files ----------------------- */
 
+  /*---------------------------- Download Methods ---------------------------------- */
   downloadAsJson(json: any, fileName: string = "sample"){
     var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(json));
-    var downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href",     dataStr);
-    downloadAnchorNode.setAttribute("download", fileName + ".json");
-    document.body.appendChild(downloadAnchorNode); // required for firefox
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
+    this.downloadFile(dataStr, fileName+".json");
   }
 
   downloadAsCsv(csv: string, fileName: string = "sample") {
@@ -215,7 +282,10 @@ export class FileUtilsService {
     this.downloadFile(dataStr, fileName+".csv");
   }
 
-  downloadFile(dataStr, fileName) {
+  downloadAsExcel(excel: any, fileName: string = "sample") {
+  }
+
+  downloadFile(dataStr: any, fileName: string) {
     var downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute("href",     dataStr);
     downloadAnchorNode.setAttribute("download", fileName);
@@ -223,10 +293,9 @@ export class FileUtilsService {
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
   }
+  /** ------------------------------- End of Download Methods ------------------------- */
 
-  downloadAsExcel() {
-  }
-
+  /** ------------------------------- Format Options ---------------------------------- */
   formatCsvOptions(options?: ICsvOptions): ICsvOptions {
     let defaultOpt: ICsvOptions = FILE_CNST.CSV_OPTIONS;
     if(!isNullOrUndefined(options)){
@@ -246,5 +315,9 @@ export class FileUtilsService {
       return defaultJsonOpts;
     }
   }
+
+  formatExcelOptions() {
+  }
+  /** ----------------------------- End of Format Options --------------------------------- */
 
 }

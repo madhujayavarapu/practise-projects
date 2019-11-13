@@ -15,6 +15,11 @@ const jsonOptions: IJsonOptions = {
   wrapValuesWith: null
 }
 
+const validFilesRegx = {
+  'xls': /^([a-zA-Z0-9\s_\\.\-:])+(.xls|.xlsx)$/,
+  'csv': /^([a-zA-Z0-9\s_\\.\-:])+(.csv)$/
+}
+
 export const FILE_CNST = {
   CSV_OPTIONS: csvOptions,
   JSON_OPTIONS: jsonOptions

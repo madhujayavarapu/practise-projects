@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <form [formGroup]="excelForm">
+          <div class="form-group">
+            <label>XLSX File:</label>
+            <ng-file-input formControlName="file"></ng-file-input>
+          </div>
+          <button class="btn btn-primary btn-sm" (click)="convertToJson()" [disabled]="!excelForm.valid">Convert to Table</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <div class="col-12">
+    <div class="card shadow-sm">
+      <div class="card-header">
+        <h4 class="card-title">Preview</h4>
+      </div>
+      <div class="card-body" *ngIf="!!excelInfo && !!excelInfo.sheets && excelInfo.sheets.length > 0">
+        <div class="d-flex">
+          <button class="btn" [class.btn-primary]="activeSheet == sheet" (click)="changeActiveSheet(i)" *ngFor="let sheet of excelInfo.sheets;let i=index">{{sheet}}</button>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="table-responsive" [innerHTML]="activeSheetHtml">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-2">
+  <div class="col-12">
+    <div id="spreadsheet"></div>
+  </div>
+</div>
