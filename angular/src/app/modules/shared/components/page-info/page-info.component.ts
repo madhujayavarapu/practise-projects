@@ -9,8 +9,8 @@ import { PROJ_CONSTANTS } from 'src/app/constants';
 export class PageInfoComponent implements OnInit {
 
   @Input('title') title: string;
-  @Input('demoLink') demoLink: string[];
-  @Input('docLink') docLink: string[];
+  @Input('demoLink') demoLink: string;
+  @Input('docLink') docLink: string;
   @Input('demoLinkMatch') demoLinkMatch: boolean = true;
   @Input('docLinkMatch') docLinkMatch: boolean = true;
 
